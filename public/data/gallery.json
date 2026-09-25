@@ -1,0 +1,8 @@
+[
+  { "player": "小明", "img": "images/gallery/g1.png", "title": "淡紫色主题", "tag": "淡紫" },
+  { "player": "阿杰", "img": "images/gallery/g2.png", "title": "绿色主题", "tag": "绿色" },
+  { "player": "鱼鱼", "img": "images/gallery/g3.png", "title": "蓝色主题", "tag": "蓝色" },
+  { "player": "Neko", "img": "images/gallery/g4.png", "title": "焦糖黄主题", "tag": "焦糖黄" },
+  { "player": "Sakura", "img": "images/gallery/g5.png", "title": "粉色樱花主题", "tag": "粉色" },
+  { "player": "晴天", "img": "images/gallery/g6.png", "title": "奶黄晴空主题", "tag": "奶黄" }
+]

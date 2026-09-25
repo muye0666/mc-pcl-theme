@@ -1,0 +1,95 @@
+:root {
+  --bg-primary: #0a0e17;
+  --bg-secondary: #141a26;
+  --bg-banner: #0a1628;
+  --primary-color: #4080ff;
+  --primary-hover: #5a9aff;
+  --text-primary: #ffffff;
+  --text-secondary: #8a9bb5;
+  --text-danger: #ff4d4f;
+  --border-color: #1f2a3d;
+  --card-radius: 12px;
+}
+
+body.light-mode {
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #ffffff;
+  --bg-banner: #e8f0ff;
+  --text-primary: #222222;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; outline: none; font-family: inherit; }
+img { display: block; max-width: 100%; }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.notice-bar {
+  margin-top: 64px;    /* 不用 fixed */
+  background: linear-gradient(90deg, #1a2a55, #2a1a55);
+  border-bottom: 1px solid rgba(64, 128, 255, 0.3);
+}
+
+.toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(64, 128, 255, 0.5);
+  font-size: 14px;
+  animation: fadeInDown 0.3s;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+
+.sort-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-secondary);
+  padding: 4px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+.sort-btn {
+  padding: 5px 14px;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  transition: all 0.2s;
+}
+.sort-btn:hover { color: var(--text-primary); }
+.sort-btn.active {
+  background: var(--primary-color);
+  color: #fff;
+}
