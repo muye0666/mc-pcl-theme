@@ -10,7 +10,7 @@ export const useThemeStore = defineStore('theme', () => {
   const sortBy = ref('newest')
   const compareList = ref([])
 
-  const tags = ['全部', '简约', '二次元', 'MC原版', '暗色', '亮色', '动态背景']
+  const tags = ['全部', '小屏', '全屏']
 
   async function loadThemes() {
     const base = import.meta.env.BASE_URL

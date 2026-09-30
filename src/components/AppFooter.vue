@@ -5,7 +5,7 @@
       <div class="links">
         <router-link to="/tutorial">安装教程</router-link>
         <span>|</span>
-        <router-link to="/submit">提交主题</router-link>
+        <router-link to="/submit">投稿指南</router-link>
         <span>|</span>
         <a href="#">版权声明</a>
       </div>

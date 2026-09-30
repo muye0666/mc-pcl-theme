@@ -7,13 +7,6 @@
         </svg>
         <span>热门主题排行</span>
       </div>
-      <div class="menu-item">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-          <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-        </svg>
-        <span>最新上传</span>
-      </div>
       <div class="menu-item" @click="$router.push('/tutorial')">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="8" r="4"/><path d="M4 21 v-2 a6 6 0 0 1 12 0 v2"/>
@@ -25,7 +18,7 @@
           <rect x="3" y="3" width="18" height="18" rx="2"/>
           <path d="M12 8 v8 M8 12 h8"/>
         </svg>
-        <span>提交主题</span>
+        <span>投稿指南</span>
       </div>
     </div>
 

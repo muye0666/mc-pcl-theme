@@ -1,130 +1,66 @@
 <template>
   <div class="container submit-page">
-    <h1>📤 提交主题</h1>
-    <p class="sub">所有投稿经后台审核后上架，请确保链接有效</p>
+    <h1>📤 投稿主题</h1>
+    <p class="sub">欢迎提交你的 MCPCL 主题，经站长审核后上架展示</p>
 
-    <form class="form" @submit.prevent="onSubmit">
-      <div class="field">
-        <label>主题预览截图（支持多图）<span class="req">*</span></label>
-        <input type="file" multiple accept="image/*" @change="onFile" />
-      </div>
+    <!-- 投稿须知 -->
+    <div class="panel">
+      <h2>📋 投稿须知</h2>
+      <ul class="rules">
+        <li>主题须为 <b>PCL2 界面主题</b>（Custom.xaml 文件），且界面截图清晰可辨</li>
+        <li>主题须为<b>原创</b>或已获得原作者<b>授权</b>，禁止搬运他人作品</li>
+        <li>下载链接须<b>长期有效</b>（推荐夸克网盘），并附上提取码</li>
+        <li>请提供：主题名称、作者、封面截图、一句话简介、屏幕适配（小屏 / 全屏）、版本号</li>
+        <li>内容健康合规，不包含违规或侵权素材</li>
+      </ul>
+    </div>
 
-      <div class="field">
-        <label>主题名称<span class="req">*</span></label>
-        <input v-model="form.name" type="text" placeholder="请输入主题名称" required />
-      </div>
+    <!-- 投稿方式 -->
+    <div class="panel">
+      <h2>✉️ 如何投稿</h2>
+      <p class="howto">
+        当前为人工审核制。请准备好上述材料，通过以下方式发给站长：
+      </p>
+      <ul class="contact">
+        <li>📮 邮箱：<code>你的邮箱@example.com</code></li>
+        <li>💬 联系方式：<code>（这里填你的 QQ / 微信群 / 站内联系方式）</code></li>
+      </ul>
+      <p class="tip">收到投稿后，站长会审核并尽快上架，感谢你的支持 🙌</p>
+    </div>
 
-      <div class="field">
-        <label>作者名称<span class="req">*</span></label>
-        <input v-model="form.author" type="text" placeholder="请输入作者名称" required />
-      </div>
-
-      <div class="field">
-        <label>主题简介</label>
-        <textarea v-model="form.desc" rows="3" placeholder="简单描述你的主题"></textarea>
-      </div>
-
-      <div class="field">
-        <label>风格标签（多选）<span class="req">*</span></label>
-        <div class="tag-select">
-          <label v-for="tag in allTags" :key="tag" class="tag-option">
-            <input type="checkbox" :value="tag" v-model="form.tags" />
-            <span>{{ tag }}</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>夸克网盘链接<span class="req">*</span></label>
-        <input v-model="form.quarkLink" type="text" placeholder="pan.quark.cn/xxxxxx" required />
-      </div>
-
-      <div class="field">
-        <label>网盘提取码</label>
-        <input v-model="form.extractCode" type="text" placeholder="选填" />
-      </div>
-
-      <div class="field">
-        <label>主题版本号</label>
-        <input v-model="form.version" type="text" placeholder="如 v1.0" />
-      </div>
-
-      <div class="field">
-        <label>更新说明</label>
-        <textarea v-model="form.updateNote" rows="2" placeholder="选填"></textarea>
-      </div>
-
-      <button type="submit" class="submit-btn">提交审核</button>
-    </form>
+    <router-link to="/" class="back">← 返回首页</router-link>
   </div>
 </template>
 
-<script setup>
-import { reactive, ref } from 'vue'
-
-const allTags = ['简约', '二次元', 'MC原版', '暗色', '亮色', '动态背景']
-const files = ref([])
-
-const form = reactive({
-  name: '', author: '', desc: '', tags: [],
-  quarkLink: '', extractCode: '', version: '', updateNote: '',
-})
-
-function onFile(e) { files.value = Array.from(e.target.files) }
-
-function onSubmit() {
-  if (!form.quarkLink.includes('pan.quark.cn')) {
-    window.dispatchEvent(new CustomEvent('toast', {
-      detail: '❌ 链接必须包含 pan.quark.cn 域名'
-    }))
-    return
-  }
-  if (!form.tags.length) {
-    window.dispatchEvent(new CustomEvent('toast', { detail: '❌ 请至少选择一个风格标签' }))
-    return
-  }
-  window.dispatchEvent(new CustomEvent('toast', {
-    detail: '✅ 提交成功，等待后台审核（纯静态版仅演示，请手动联系管理员）'
-  }))
-  console.log('提交数据：', { ...form, files: files.value })
-}
-</script>
+<script setup></script>
 
 <style scoped>
-.submit-page { padding-top: 100px; padding-bottom: 60px; max-width: 720px; }
+.submit-page { padding-top: 100px; padding-bottom: 60px; max-width: 760px; }
 h1 { font-size: 32px; margin-bottom: 8px; }
-.sub { color: var(--text-secondary); margin-bottom: 30px; }
-.form { display: flex; flex-direction: column; gap: 20px; }
-.field { display: flex; flex-direction: column; gap: 8px; }
-.field label { font-size: 14px; color: var(--text-primary); }
-.req { color: var(--text-danger); margin-left: 4px; }
-.field input[type="text"], .field textarea {
-  padding: 10px 14px; border-radius: 8px;
-  background: var(--bg-secondary); border: 1px solid var(--border-color);
-  color: var(--text-primary); outline: none; font-size: 14px; font-family: inherit;
-  transition: border-color 0.2s;
+.sub { color: var(--text-secondary); margin-bottom: 30px; font-size: 14px; }
+
+.panel {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
 }
-.field input:focus, .field textarea:focus { border-color: var(--primary-color); }
-.field input[type="file"] { color: var(--text-secondary); font-size: 13px; }
-.tag-select { display: flex; flex-wrap: wrap; gap: 10px; }
-.tag-option {
-  display: flex; align-items: center; gap: 6px;
-  padding: 6px 12px; border-radius: 20px;
-  background: var(--bg-secondary); border: 1px solid var(--border-color);
-  cursor: pointer; font-size: 13px; color: var(--text-secondary);
-  transition: all 0.2s;
-}
-.tag-option:has(input:checked) {
-  background: rgba(64,128,255,0.15);
-  border-color: var(--primary-color);
+.panel h2 { font-size: 18px; margin-bottom: 16px; }
+
+.rules { padding-left: 20px; color: var(--text-secondary); line-height: 2.1; font-size: 14px; }
+.rules b { color: var(--text-primary); }
+
+.howto { color: var(--text-secondary); font-size: 14px; line-height: 1.8; margin-bottom: 10px; }
+.contact { list-style: none; padding: 0; color: var(--text-primary); font-size: 14px; line-height: 2; }
+code {
+  background: rgba(64, 128, 255, 0.12);
   color: var(--primary-color);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 13px;
 }
-.tag-option input { display: none; }
-.submit-btn {
-  padding: 14px; border-radius: 10px;
-  background: var(--primary-color); color: #fff;
-  font-size: 15px; font-weight: 600;
-  transition: background 0.2s;
-}
-.submit-btn:hover { background: var(--primary-hover); }
+.tip { color: var(--primary-color); font-size: 14px; margin-top: 14px; }
+
+.back { color: var(--primary-color); font-size: 14px; }
 </style>

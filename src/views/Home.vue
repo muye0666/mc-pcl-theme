@@ -15,17 +15,17 @@
           >
             {{ s.label }}
           </button>
-          <a href="#" class="more-link">更多 →</a>
+          <router-link to="/all-themes" class="more-link">更多 →</router-link>
         </div>
       </div>
-        <div class="card-grid">
-          <ThemeCard
-            v-for="t in store.filteredThemes"
-            :key="t.id"
-            :theme="t"
-            @preview="openModal"
-          />
-        </div>
+        <div :class="['card-grid', store.viewMode === 'full' ? 'full-mode' : 'small-mode']">
+  <ThemeCard
+    v-for="t in previewThemes"
+    :key="t.id"
+    :theme="t"
+    @preview="openModal"
+  />
+</div>
         <p v-if="!store.filteredThemes.length && store.themes.length" class="empty">
           没有找到匹配的主题
         </p>
@@ -50,7 +50,7 @@ const sortOptions = [
 ]
 import TagCloud from '../components/TagCloud.vue'
 import MessageBoard from '../components/MessageBoard.vue'
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import AppBanner from '../components/AppBanner.vue'
 import TagBar from '../components/TagBar.vue'
 import ThemeCard from '../components/ThemeCard.vue'
@@ -61,6 +61,9 @@ import { useThemeStore } from '../store/theme'
 
 const store = useThemeStore()
 const current = ref(null)
+
+// 首页精选主题只显示前 8 个，超出部分进入“更多 / 全部主题”页
+const previewThemes = computed(() => store.filteredThemes.slice(0, 8))
 
 function openModal(theme) { current.value = theme }
 

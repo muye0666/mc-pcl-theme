@@ -1,12 +1,12 @@
 <template>
   <section class="player-wall">
     <div class="section-head">
-      <h2 class="section-title">❤️ 玩家爱心墙</h2>
+      <h2 class="section-title">❤️ 作者爱心墙</h2>
       <router-link to="/gallery" class="more-link">查看全部 →</router-link>
     </div>
 
     <p class="section-desc">
-      点击任意图片查看大图，玩家的返图拼成一颗会跳动的爱心
+      点击任意图片查看大图，作者的返图拼成一颗会跳动的爱心
     </p>
 
     <div class="wall-body">

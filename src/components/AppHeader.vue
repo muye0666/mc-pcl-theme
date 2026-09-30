@@ -11,9 +11,9 @@
 
       <nav class="nav">
         <router-link to="/">首页</router-link>
-        <router-link to="/">全部主题</router-link>
-        <router-link to="/">分类标签</router-link>
+        <router-link to="/all-themes">全部主题</router-link>
         <router-link to="/gallery">玩家返图</router-link>
+        <router-link to="/custom-tutorial">自定义教程</router-link>
         <router-link to="/tutorial">关于</router-link>
       </nav>
 
@@ -60,9 +60,9 @@
       <div class="drawer">
         <router-link to="/" @click="drawerOpen = false">首页</router-link>
         <router-link to="/all-themes" @click="drawerOpen = false">全部主题</router-link>
-        <router-link to="/gallery" @click="drawerOpen = false">玩家返图</router-link>
         <router-link to="/tutorial" @click="drawerOpen = false">安装教程</router-link>
-        <router-link to="/submit" @click="drawerOpen = false">提交主题</router-link>
+        <router-link to="/submit" @click="drawerOpen = false">投稿指南</router-link>
+        <router-link to="/custom-tutorial" @click="drawerOpen = false">自定义教程</router-link>
       </div>
     </div>
   </header>

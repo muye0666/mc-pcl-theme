@@ -3,7 +3,9 @@
     "id": "1",
     "name": "淡紫色主题",
     "author": "阿行吗",
-    "tags": ["二次元", "亮色"],
+    "tags": [
+      "全屏"
+    ],
     "cover": "images/theme1.png",
     "desc": "淡紫色柔和风格，视觉舒适",
     "updateDate": "2026-09-19",
@@ -17,7 +19,9 @@
     "id": "2",
     "name": "绿色主题",
     "author": "阿行吗",
-    "tags": ["简约", "亮色"],
+    "tags": [
+      "全屏"
+    ],
     "cover": "images/theme2.png",
     "desc": "清新绿色简约风格",
     "updateDate": "2026-09-19",
@@ -31,7 +35,9 @@
     "id": "3",
     "name": "蓝色主题",
     "author": "阿行吗",
-    "tags": ["简约", "暗色"],
+    "tags": [
+      "全屏"
+    ],
     "cover": "images/theme3.png",
     "desc": "深海蓝暗色主题",
     "updateDate": "2026-09-19",
@@ -45,7 +51,9 @@
     "id": "4",
     "name": "焦糖黄主题",
     "author": "阿行吗",
-    "tags": ["简约", "亮色"],
+    "tags": [
+      "小屏"
+    ],
     "cover": "images/theme4.png",
     "desc": "温暖焦糖黄风格",
     "updateDate": "2026-09-19",
@@ -59,7 +67,9 @@
     "id": "5",
     "name": "粉色樱花主题",
     "author": "阿行吗",
-    "tags": ["二次元", "亮色"],
+    "tags": [
+      "小屏"
+    ],
     "cover": "images/theme5.png",
     "desc": "粉色樱花少女风格",
     "updateDate": "2026-09-19",
@@ -73,7 +83,9 @@
     "id": "6",
     "name": "奶黄晴空主题",
     "author": "阿行吗",
-    "tags": ["简约", "亮色"],
+    "tags": [
+      "全屏"
+    ],
     "cover": "images/theme6.png",
     "desc": "奶黄晴空清新风格",
     "updateDate": "2026-09-19",
@@ -82,5 +94,37 @@
     "extractCode": "",
     "isInvalid": false,
     "intro": "奶黄色搭配晴空蓝，清新明朗，给人一天好心情。"
+  },
+  {
+    "id": "7",
+    "name": "滑稽彩主题",
+    "author": "阿行吗",
+    "tags": [
+      "小屏"
+    ],
+    "cover": "images/theme7.png",
+    "desc": "滑稽彩色风格",
+    "updateDate": "2026-09-19",
+    "version": "v1.0",
+    "quarkLink": "pan.quark.cn/s/d54514588a8e",
+    "extractCode": "",
+    "isInvalid": false,
+    "intro": "滑稽的彩色调，适合喜欢活泼、有趣风格的玩家。"
+  },
+  {
+    "id": "8",
+    "name": "山茶花主题",
+    "author": "阿行吗",
+    "tags": [
+      "小屏"
+    ],
+    "cover": "images/theme8.png",
+    "desc": "山茶花清新风格",
+    "updateDate": "2026-09-19",
+    "version": "v1.0",
+    "quarkLink": "pan.quark.cn/s/2bf24207f534",
+    "extractCode": "",
+    "isInvalid": false,
+    "intro": "山茶花元素，清新自然，适合喜欢田园风格的玩家。"
   }
 ]
