@@ -22,8 +22,8 @@
         当前为人工审核制。请准备好上述材料，通过以下方式发给站长：
       </p>
       <ul class="contact">
-        <li>📮 邮箱：<code>你的邮箱@example.com</code></li>
-        <li>💬 联系方式：<code>（这里填你的 QQ / 微信群 / 站内联系方式）</code></li>
+        <li>📮 邮箱：<code>2132045206@qq.com</code></li>
+        <li>💬 联系方式：<code>（联系方式:抖音）</code></li>
       </ul>
       <p class="tip">收到投稿后，站长会审核并尽快上架，感谢你的支持 🙌</p>
     </div>
