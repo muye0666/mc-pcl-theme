@@ -19,3 +19,12 @@ npm-debug.log*
 # 环境
 .env
 .env.local
+
+# 站长待入库临时文件（含图片，体积大且敏感，不入库）
+pending-theme.json
+
+# 站长内部操作手册（含后台口令等内部信息）
+站长操作方案.md
+
+# 站长后台源码（避免口令等内部逻辑进入公开仓库）
+src/views/Admin.vue

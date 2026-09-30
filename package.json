@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "add:theme": "node scripts/add-theme.mjs",
-    "deploy": "gh-pages -d dist -b gh-pages -r https://gitee.com/muye66666/mc-pcl-theme.git"
+    "deploy": "gh-pages -d dist -b gh-pages -r https://gitee.com/muye66666/mc-pcl-theme.git",
+    "deploy:github": "gh-pages -d dist -b gh-pages -r https://github.com/muye0666/mc-pcl-theme.git"
   },
   "dependencies": {
     "pinia": "^2.1.7",

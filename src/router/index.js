@@ -27,8 +27,17 @@ if (import.meta.env.DEV) {
   })
 }
 
-export default createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes,
   scrollBehavior: () => ({ top: 0 }),
 })
+
+// 生产环境下访问站长后台地址 → 自动跳回首页（后台仅本地开发可见，避免发布版白屏）
+router.beforeEach((to) => {
+  if (import.meta.env.PROD && to.path === '/admin') {
+    return '/'
+  }
+})
+
+export default router
